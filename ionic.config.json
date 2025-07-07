@@ -1,0 +1,7 @@
+{
+  "name": "gpa_calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
