@@ -1,21 +1,13 @@
+# GPA Calculator App
 
+A simple GPA calculator Android app with a clean UI and accurate results.
 
-## Welcome to **cgpa_calculator_app**!
-To get started, you can directly install the app on your Android device.
+## 📥 Download the App
 
-##  Installation
+[⬇️ Click here to download app](https://github.com/Sai630414/gpa_calculator_app/raw/master/app-debug.apk)
 
-1. Scroll up and **download the `app-debug.apk` file** provided above.
-2. Transfer the APK to your Android phone (if not already downloaded on it).
-3. Open the file on your device and follow the instructions to install.
+After downloading:
+1. Transfer the APK to your Android device.
+2. Open it and install (allow "Unknown sources" if prompted).
+3. Launch the app and start calculating your GPA!
 
-## 📱 About the App
-
-A short description of your app goes here. For example:
-
-> MyApp helps users calculate CGPA, manage tasks, or stay productive with a clean and user-friendly interface.
-
----
-
-Feel free to customize the description if your app has specific features or functionality you’d like to highlight.
-Let me know if you want a fancier version with badges or markdown styling too.
