@@ -1,0 +1,24 @@
+<ion-menu contentId="main-content" side="end" type="overlay">
+  <ion-header class="glass-header">
+    <ion-toolbar color="primary">
+      <ion-title>🎓 GPA Zone</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding menu-content">
+    <ion-list lines="none">
+      <ion-menu-toggle auto-hide="true" *ngFor="let page of appPages">
+        <ion-item
+          [routerLink]="!page.external ? page.url : null"
+          [href]="page.external ? page.url : null"
+          target="{{ page.external ? '_blank' : '_self' }}"
+          button
+          class="menu-item"
+        >
+          <ion-icon slot="start" [name]="page.icon" class="menu-icon"></ion-icon>
+          <ion-label>{{ page.title }}</ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>

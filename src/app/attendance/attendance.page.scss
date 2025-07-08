@@ -1,0 +1,30 @@
+ion-card {
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+ion-input {
+  --border-radius: 12px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --background: #f9f9f9;
+  --border-color: #ccc;
+  font-size: 16px;
+}
+
+ion-button {
+  --border-radius: 12px;
+  --background: #27ae60;
+}
+
+ion-button:hover {
+  --background: #219150;
+}
+
+.result-box {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #2980b9;
+  font-weight: 500;
+  text-align: center;
+}

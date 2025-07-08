@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/users"></ion-back-button>
+    </ion-buttons>
+    <ion-title>📘 CGPA - {{ userName }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ng-container *ngIf="savedData as data; else noData">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>📊 CGPA Table</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Grade</th>
+              <th>Credit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let grade of data.grades; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ grade }}</td>
+              <td>{{ data.credits[i] }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="cgpa-value">
+          🎓 Final CGPA: <strong>{{ calculateCGPA() | number:'1.2-2' }}</strong>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <ng-template #noData>
+    <div class="no-data">
+      ❌ No data found for this user.
+    </div>
+  </ng-template>
+</ion-content>

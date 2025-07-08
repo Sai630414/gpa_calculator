@@ -1,0 +1,26 @@
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Attendance Calculator</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <ion-card>
+      <ion-card-content>
+        <ion-label position="stacked">Classes Attended</ion-label>
+        <ion-input type="number" [(ngModel)]="attended" placeholder="e.g. 40"></ion-input>
+
+        <ion-label position="stacked" class="ion-margin-top">Total Classes Held</ion-label>
+        <ion-input type="number" [(ngModel)]="total" placeholder="e.g. 50"></ion-input>
+
+        <ion-button expand="block" class="ion-margin-top" (click)="calculate()">Calculate</ion-button>
+
+        <div class="result-box" [innerHTML]="result"></div>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+

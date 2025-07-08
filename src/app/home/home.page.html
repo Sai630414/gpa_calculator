@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
+<!-- ✅ Home Page -->
+<ion-header class="glass-header">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title class="animated-title">🎓 GPA Zone</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content class="ion-padding home-bg">
+  <div class="hero-section ion-text-center">
+    <h1 class="glow-text">Welcome to GPA Zone</h1>
+    <p class="subtitle">Your one-stop destination for GPA, CGPA & Attendance tools</p>
   </div>
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-padding">
+      <ion-col size="12" size-md="4">
+        <ion-button expand="block" class="glass-button yellow" routerLink="/cgpa">📘 CGPA Calculator</ion-button>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-button expand="block" class="glass-button green" routerLink="/gpa">📗 GPA Calculator</ion-button>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-button expand="block" class="glass-button blue" routerLink="/attendance">📅 Attendance Calculator</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<ion-footer class="frosted-footer">
+  <ion-toolbar class="footer-toolbar">
+    <ion-row class="ion-justify-content-between ion-align-items-center">
+      <ion-col size="12" size-md="6" class="ion-text-center ion-text-md-start">
+        <p class="footer-text">© 2025 GPA Zone | Built by Sai Kondareddy</p>
+      </ion-col>
+      <ion-col size="12" size-md="6" class="ion-text-center ion-text-md-end">
+        <div class="social-icons">
+          <a href="https://www.instagram.com/sai_.reddy05" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="https://www.linkedin.com/in/sai-kondareddy-338269291/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+          <a href="https://github.com/Sai630414" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

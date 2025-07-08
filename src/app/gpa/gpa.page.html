@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>GPA Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1>GPA Calculator</h1>
+
+    <ion-card>
+      <ion-grid class="table-header">
+        <ion-row>
+          <ion-col size="4"><strong>Subject</strong></ion-col>
+          <ion-col size="4"><strong>Grade</strong></ion-col>
+          <ion-col size="4"><strong>Credits</strong></ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row *ngFor="let subject of subjects; let i = index">
+          <ion-col size="4">Subject {{ i + 1 }}</ion-col>
+          <ion-col size="4">
+            <ion-select interface="popover" [(ngModel)]="subject.grade">
+              <ion-select-option value="">-- Select --</ion-select-option>
+              <ion-select-option *ngFor="let grade of grades" [value]="grade">
+                {{ grade }}
+              </ion-select-option>
+            </ion-select>
+          </ion-col>
+          <ion-col size="4">
+            <ion-select interface="popover" [(ngModel)]="subject.credit">
+              <ion-select-option value="">-- Select --</ion-select-option>
+              <ion-select-option *ngFor="let credit of creditOptions" [value]="credit">
+                {{ credit }}
+              </ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+
+    <ion-button expand="block" (click)="addSubject()">➕ Add Subject</ion-button>
+    <ion-button expand="block" (click)="calculateGPA()">Calculate GPA</ion-button>
+
+    <div class="result" *ngIf="gpa !== null">
+      Your GPA is: {{ gpa.toFixed(2) }}
+    </div>
+  </div>
+</ion-content>
+
+

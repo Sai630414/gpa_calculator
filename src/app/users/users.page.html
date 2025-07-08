@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/cgpa"></ion-back-button>
+    </ion-buttons>
+    <ion-title>📋 Saved Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list *ngIf="users.length > 0">
+    <ion-item *ngFor="let user of users" button (click)="openUser(user)">
+      <ion-avatar slot="start">
+        <ion-icon name="person-circle-outline" style="font-size: 32px;"></ion-icon>
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ user }}</h2>
+        <p>View saved CGPA</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="users.length === 0" class="empty-message">
+    <p>🧾 No saved users found.</p>
+  </div>
+</ion-content>

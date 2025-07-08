@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>CGPA Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+    <h1>CGPA Calculator</h1>
+
+    <ion-card>
+      <div class="table-wrapper">
+        <div class="header-row">
+          <div class="cell">Credits</div>
+          <div class="cell" *ngFor="let grade of grades">
+            {{ grade }} ({{ gradePoints[grade] }})
+          </div>
+        </div>
+
+        <div class="data-row" *ngFor="let credit of credits">
+          <div class="cell">{{ credit }}</div>
+          <div class="cell" *ngFor="let grade of grades">
+            <ion-input
+              type="number"
+              min="0"
+              [(ngModel)]="inputs['c' + credit + '_g' + grade]"
+              class="custom-input"
+            ></ion-input>
+          </div>
+        </div>
+      </div>
+    </ion-card>
+
+    <ion-button expand="block" color="success" (click)="calculateCGPA()">
+      🎯 Calculate CGPA
+    </ion-button>
+
+    <div class="result" *ngIf="result !== null">
+      Your CGPA is: {{ result.toFixed(2) }}
+    </div>
+
+    <!-- Save Section -->
+    <ion-item lines="none">
+      <ion-label position="floating">Your Name</ion-label>
+      <ion-input [(ngModel)]="studentName" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" class="save-btn" (click)="saveCGPA()">
+      💾 Save Result
+    </ion-button>
+
+    <ion-card class="instruction-card">
+      <ion-card-content>
+        <h2>How to Enter Subject Details:</h2>
+        <p>
+          Each row is a credit value (1, 2, 3...), each column is a grade (S, A, B, etc.).<br />
+          Input how many subjects you got for each combination.<br />
+          Example: 2 subjects with 4 credits and A grade = 2 in 4-A cell.
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
